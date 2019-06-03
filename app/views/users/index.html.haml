@@ -1,1 +1,6 @@
-%p hello
+.main_data
+  - @userdata.each do |user|
+    %p= user.name
+    %p= user.birthday
+
+
