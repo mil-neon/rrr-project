@@ -119,3 +119,7 @@ end
 root 'コントローラ名#アクション名'
 ```
 * `bundle exec rake routes`で確認
+
+## 【投稿機能作成手順】
+
+### 1.「form_for」を使ってフォームを作成する

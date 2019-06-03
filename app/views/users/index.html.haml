@@ -1,6 +1,21 @@
-.main_data
-  - @userdata.each do |user|
-    %p= user.name
-    %p= user.birthday
+.main
+  %h1 投稿フォーム
+  .main_form
+    = form_for @user do |f|
+      %h3 名前を入力
+      = f.text_field :name,placeholder: "フルネーム",class: "main_form_name"
+      %h3 誕生日を入力
+      = f.text_field :birthday,placeholder: "誕生日",class: "main_form_birthday"
+      %div
+      = f.submit "送信",class: "main_form_btn"
+
+
+
+  .main_data
+    %h1 投稿一覧
+    - @userdata.each do |user|
+      %p= user.name
+      %p= user.birthday
+      %p ------------------------
 
 
