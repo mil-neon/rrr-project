@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(article_params)
+    @user = User.create(user_params)
   end
 
   private
-  def article_params
+  def user_params
     params.require(:user).permit(:name,:birthday)
   end
 end

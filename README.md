@@ -122,4 +122,30 @@ root 'コントローラ名#アクション名'
 
 ## 【投稿機能作成手順】
 
-### 1.「form_for」を使ってフォームを作成する
+### 「form_for」を使ってフォームを作成する
+#### ▼フォーム表示画面のアクションにモデルのインスタンス作成
+```user_controller.rb
+def index
+    @変数 = テーブル名.new
+  end
+```
+#### ▼ビューにフォームを作成
+```index.html.haml
+= form_for @変数 do |f|
+  = f.text_field :name
+  = f.text_field :birthday
+  = f.submit "送信"
+```
+* `form_for`では、送信される時自動で、`create``update`にアクションが不振り分けられる
+
+#### ▼createアクションを設定する
+```user_controller.rb
+def create
+    @変数 = テーブル名.create(user_params)
+  end
+
+  private
+  def user_params
+    params.require(:テーブル名).permit(:カラム, :カラム)
+  end
+```
