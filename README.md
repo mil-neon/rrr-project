@@ -1,6 +1,6 @@
 # README
 
-## 【ailsで新規アプリ作成手順】
+## 【Railsで新規アプリ作成手順】
 
 ### 1.プロジェクトディレクトリ新規作成
 ```bash
@@ -22,18 +22,18 @@ gem "rails", "5.2.3"  #任意のバージョンにする
 ```bash
 bundle install --path vendor/bundle
 ```
-・パス指定してインストールする事で、今後`/ディレクトリ`＞`vendor/bundleディレクトリ`内にgemをインストールする
-・`gemfile.lock`が作成される
-・gemfileあるよ！って警告出ますが、上書きEnterで進めてください。
+* パス指定してインストールする事で、今後`/ディレクトリ`＞`vendor/bundleディレクトリ`内にgemをインストールする
+* `gemfile.lock`が作成される
+* gemfileあるよ！って警告出ますが、上書きEnterで進めてください。
 
 
 ### 5.railsのアプリを新規作成する
 ```bash
 bundle exec rails new . -B -d mysql --skip-turbolinks --skip-test
 ```
-`-d mysql`データベースの指定
-`--skip-turbolinks`Turbolinks5を無視する
-`--skip-test`テスト作成しない
+* `-d mysql`データベースの指定
+* `--skip-turbolinks`Turbolinks5を無視する
+* `--skip-test`テスト作成しない
 
 
 ### 6.残りのgemを一括でインストール
@@ -60,16 +60,16 @@ bundle install
 ```bash
 bundle exec rails s
 ```
-・DBがないので、エラーが出ています。
-・`bundle exec`はGemfileで指定された環境で実行できる様にする
+* DBがないので、エラーが出ています。
+* `bundle exec`はGemfileで指定された環境で実行できる様にする
 
 
 ### 8.DB作成
 ```bash
 bundle exec rake db:create
 ```
-・`development` `test`が作成される
-・http://localhost:3000/ 表示される
+* `development` `test`が作成される
+* http://localhost:3000/ 表示される
 
 ### 9.MVC設定
 #### ▼モデル作成 （モデル名は単数形小文字）
@@ -97,7 +97,7 @@ bundle exec rake db:migrate
 ```bash
 bundle exec rails g controller コントローラ名
 ```
-・（コントローラ名は複数形小文字）
+* （コントローラ名は複数形小文字）
 
 #### ▼コントローラーファイル編集
 ```
@@ -110,12 +110,12 @@ end
 ```
 アクション名.html.haml
 ```
-・bodyの中身を記述
-・hamlに変更したら、サーバー立ち上げ直す
+* bodyの中身を記述
+* hamlに変更したら、サーバー立ち上げ直す
 
 
 ### 10.ルート設定
 ```bash
 root 'コントローラ名#アクション名'
 ```
-・`bundle exec rake routes`で確認
+* `bundle exec rake routes`で確認
