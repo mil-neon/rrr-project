@@ -5,7 +5,7 @@
 ### 1.プロジェクトディレクトリ新規作成
 ```bash
 mkdir プロジェクト名
-cd　プロジェクト名
+cd プロジェクト名
 ```
 
 ### 2.Gemfile作成
@@ -124,28 +124,30 @@ root 'コントローラ名#アクション名'
 
 ### 「form_for」を使ってフォームを作成する
 #### ▼フォーム表示画面のアクションにモデルのインスタンス作成
-```user_controller.rb
+```users_controller.rb
 def index
-    @変数 = テーブル名.new
+    @userdata = User.all
+    @user = User.new
   end
 ```
 #### ▼ビューにフォームを作成
 ```index.html.haml
-= form_for @変数 do |f|
+= form_for @user do |f|
   = f.text_field :name
   = f.text_field :birthday
   = f.submit "送信"
 ```
-* `form_for`では、送信される時自動で、`create``update`にアクションが不振り分けられる
+* `form_for`では、送信される時自動で、`create`や`update`にアクションが不振り分けられる
 
 #### ▼createアクションを設定する
 ```user_controller.rb
 def create
-    @変数 = テーブル名.create(user_params)
-  end
+  @user = テーブル名.create(user_params)
+  redirect_to controller: :users, action: :index
+end
 
-  private
-  def user_params
-    params.require(:テーブル名).permit(:カラム, :カラム)
-  end
+private
+def user_params
+  params.require(:テーブル名).permit(:カラム, :カラム)
+end
 ```
