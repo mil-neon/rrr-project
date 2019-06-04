@@ -13,9 +13,9 @@
 
   .main_data
     %h1 投稿一覧
-    - @userdata.each do |user|
-      %p= user.name
-      %p= user.birthday
-      %p ------------------------
+    .main_data_box
+      - @userdata.each do |user|
+        %p= user.name
+        %p= user.birthday
 
 

@@ -74,7 +74,7 @@ bundle exec rake db:create
 ### 9.MVC設定
 #### ▼モデル作成 （モデル名は単数形小文字）
 ```bash
-bundle exec rails g model モデル名
+bundle exec rails g model user
 ```
 #### ▼マイグレーションファイルにテーブル名・カラムを設定する
 例）
@@ -95,20 +95,20 @@ bundle exec rake db:migrate
 ```
 #### ▼コントローラ作成
 ```bash
-bundle exec rails g controller コントローラ名
+bundle exec rails g controller users
 ```
 * （コントローラ名は複数形小文字）
 
 #### ▼コントローラーファイル編集
 ```
 def index 
-  @変数 = User.all
+  @userdata = User.all
 end
 ```
 
 #### ▼ビューファイル作成
 ```
-アクション名.html.haml
+index.html.haml
 ```
 * bodyの中身を記述
 * hamlに変更したら、サーバー立ち上げ直す
@@ -117,6 +117,7 @@ end
 ### 10.ルート設定
 ```bash
 root 'コントローラ名#アクション名'
+resources :users
 ```
 * `bundle exec rake routes`で確認
 
