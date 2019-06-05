@@ -12,9 +12,9 @@
 
 
   .main_data
-    %h1 投稿一覧
-    .main_data_box
-      - @userdata.each do |user|
+    %h1 投稿一覧   
+    - @userdata.each do |user|
+      .main_data_box
         %p= user.name
         %p= user.birthday
 

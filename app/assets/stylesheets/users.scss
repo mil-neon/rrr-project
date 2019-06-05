@@ -1,0 +1,65 @@
+.main{
+  margin: 0;
+  padding: 0px;
+  widows: 100%;
+  text-align: center;
+  font-size: 15px;
+  h1{
+    color: rgb(110, 110, 110);
+  }
+  &_form{
+    border:solid 1px #ccc;
+    border-radius:10px;
+    h3{
+      padding: 10px 0 ;
+      margin: 0;
+    }
+    color: rgb(110, 110, 110);
+    &_name,&_birthday{
+      text-align: center;
+      width: 200px;
+      height: 20px;
+      padding:10px;
+      margin:0 0 20px;
+      border:solid 1px #ccc;
+      border-radius:10px;
+      &:hover{
+        background-color: rgb(250, 250, 250);
+      }
+    }
+    &_btn{
+      height: 30px;
+      width: 100px;
+      margin:0 0 20px;
+      font-size: 16px;
+      color: rgb(110, 110, 110);
+      border:solid 1px #ccc;
+      border-radius:10px;
+      &:hover{
+        background-color: rgb(250, 250, 250);
+        color: rgb(128, 199, 187);
+      }
+    }
+  }
+  &_data{
+    margin: 40px 0 0;
+    border:solid 1px #ccc;
+    border-radius:10px;
+    background-color: rgb(250, 250, 250);
+    &_box{
+      display: inline-block; 
+      height: 100px;
+      width: 100px;
+      border:solid 1px #ccc;
+      border-radius:10px;
+      background-color:rgb(255, 255, 255);
+      margin: 5px;
+      p{
+        padding: 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
