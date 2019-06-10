@@ -13,7 +13,7 @@ cd プロジェクト名
 bundle init
 ```
 
-### 3.gemfile編集
+### 3.Gemfile編集
 ```bash
 gem "rails", "5.2.3"  #任意のバージョンにする
 ```
@@ -35,6 +35,11 @@ bundle exec rails new . -B -d mysql --skip-turbolinks --skip-test
 * `--skip-turbolinks`Turbolinks5を無視する
 * `--skip-test`テスト作成しない
 
+* GitHubで管理したく無いファイルを指定
+```gitignore
+!/vendor/.keep
+/vendor/bundle
+```
 
 ### 6.残りのgemを一括でインストール
 ```bash
@@ -132,6 +137,11 @@ def index
   end
 ```
 #### ▼ビューにフォームを作成
+* hamlで作成する為に、Gemを記述
+```Gemfile
+gem 'haml-rails'
+gem 'erb2haml'
+```
 ```index.html.haml
 = form_for @user do |f|
   = f.text_field :name
@@ -152,3 +162,21 @@ def user_params
   params.require(:テーブル名).permit(:カラム, :カラム)
 end
 ```
+
+## 【GitHub管理】
+#### ▼リモートリポジトリ作成
+* GitHubにログインした状態で、「New Repository」ボタンを押下します。
+* 「Public」
+* 「Create repository」ボタンをクリック
+* アドレス控える
+
+#### ▼ローカルリポジトリ作成
+* 管理したいディレクトリに移動
+* `git init`コマンドでGitリポジトリを新たに作成
+* 管理したいAPPをディレクトリに移動
+* `git add アプリ名`でインデックスに追加
+* `git commit -m "コメント"`でコミットする
+
+#### ▼リモートリポジトリにローカルリポジトリを反映
+* `git remote add origin https://github.com//~~~`リモートリポジトリの情報を追加
+* `git push origin master`ローカルリポジトリをプッシュ

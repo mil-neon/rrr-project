@@ -43,22 +43,15 @@
   }
   &_data{
     margin: 40px 0 0;
+    padding: 10px 0;
     border:solid 1px #ccc;
     border-radius:10px;
     background-color: rgb(250, 250, 250);
     &_box{
-      display: inline-block; 
-      height: 100px;
-      width: 100px;
-      border:solid 1px #ccc;
-      border-radius:10px;
-      background-color:rgb(255, 255, 255);
-      margin: 5px;
+      padding:10px 0 0 30px;
+      text-align: left;
       p{
-        padding: 5px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        margin: 5px 0 0;
       }
     }
   }

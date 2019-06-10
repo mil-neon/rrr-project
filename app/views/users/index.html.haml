@@ -1,21 +1,16 @@
 .main
-  %h1 投稿フォーム
+  %h1 What is your birthday?
   .main_form
     = form_for @user do |f|
-      %h3 名前を入力
-      = f.text_field :name,placeholder: "フルネーム",class: "main_form_name"
-      %h3 誕生日を入力
-      = f.text_field :birthday,placeholder: "誕生日",class: "main_form_birthday"
+      %h3 Enter name
+      = f.text_field :name,placeholder: "full name",class: "main_form_name"
+      %h3 Enter birthday
+      = f.text_field :birthday,placeholder: "birthday",class: "main_form_birthday"
       %div
-      = f.submit "送信",class: "main_form_btn"
-
-
-
+      = f.submit "SEND",class: "main_form_btn"
   .main_data
-    %h1 投稿一覧   
+    %h1 My friend's birthday
     - @userdata.each do |user|
-      .main_data_box
-        %p= user.name
+      %details.main_data_box
+        %summary= user.name
         %p= user.birthday
-
-
